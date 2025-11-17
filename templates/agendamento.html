@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Agendamento — BarbLab</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script defer src="{{ url_for('static', filename='js/app.js') }}"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">Barb<span>Lab</span></div>
+  <nav><a href="/">Início</a><a href="/cadastro">Cadastro</a><a href="/login">Entrar</a></nav>
+</header>
+
+<section class="form-section">
+  <h2>Agendar Horário</h2>
+  <form id="formAgendamento">
+    <label>Nome (logado)</label>
+    <input id="nome" readonly>
+
+    <label>Serviço</label>
+    <select id="servico" required>
+      <option value="">Selecione o corte</option>
+      <option value="Corte Clássico">Corte Clássico</option>
+      <option value="Degradê">Degradê</option>
+      <option value="Barba">Barba</option>
+      <option value="Combo Corte + Barba">Combo Corte + Barba</option>
+    </select>
+
+    <label>Barbeiro</label>
+    <select id="barbeiro" required>
+      <option value="">Selecione o barbeiro</option>
+      <option value="Lucas">Lucas</option>
+      <option value="Rafa">Rafa</option>
+      <option value="Diego">Diego</option>
+    </select>
+
+    <label>Data</label>
+    <input id="data_ag" type="date" required autocomplete="off">
+
+    <label>Horário</label>
+    <input id="horario" type="time" required>
+
+    <label>Observações (opcional)</label>
+    <textarea id="obs"></textarea>
+
+    <button type="submit">Confirmar</button>
+    <p id="msg" class="msg"></p>
+  </form>
+</section>
+
+<footer>© 2025 BarbLab</footer>
+</body>
+</html>

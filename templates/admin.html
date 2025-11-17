@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Admin — BarbLab</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">Barb<span>Lab</span></div>
+  <nav><a href="/admin/logout">Sair</a></nav>
+</header>
+
+<main class="admin-panel">
+  <h2>Painel Admin</h2>
+  <div class="tabs">
+    <button id="tabClientes" class="tab active">Clientes</button>
+    <button id="tabAgendamentos" class="tab">Agendamentos</button>
+  </div>
+  <div id="tableArea">Carregando...</div>
+</main>
+
+<script src="{{ url_for('static', filename='js/admin.js') }}"></script>
+</body>
+</html>

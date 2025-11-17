@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login do Administrador - BarbLab</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+<header class="site-header">
+  <div class="logo">Barb<span>Lab</span></div>
+  <nav>
+    <a href="/">Início</a>
+    <a href="/cadastro">Cadastro</a>
+    <a href="/login">Login</a>
+  </nav>
+</header>
+
+<section class="form-section">
+  <h2>Login do Administrador</h2>
+
+  <form method="POST" action="/admin-login">
+    <label for="usuario">Usuário</label>
+    <input type="text" id="usuario" name="usuario" placeholder="Digite o usuário" required>
+
+    <label for="senha">Senha</label>
+    <input type="password" id="senha" name="senha" placeholder="Digite a senha" required>
+
+    {% if erro %}
+      <p style="color:#ff7675;">{{ erro }}</p>
+    {% endif %}
+
+    <button type="submit" class="btn">Entrar</button>
+  </form>
+</section>
+
+<footer>© 2025 BarbLab</footer>
+</body>
+</html>

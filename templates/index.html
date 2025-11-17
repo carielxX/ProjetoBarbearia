@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BarbLab - Seu estilo em boas mãos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script defer src="{{ url_for('static', filename='js/app.js') }}"></script>
+  <style>
+    /* animações suaves pro hero */
+    .hero-content {
+      animation: fadeInUp 1.3s ease forwards;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero {
+      background: linear-gradient(180deg, #000 10%, #0a0a0a 90%);
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      padding: 160px 20px 120px;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      letter-spacing: 1px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #bbb;
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .cta-btn {
+      background: #00b894;
+      color: #000;
+      text-decoration: none;
+      padding: 14px 34px;
+      border-radius: 10px;
+      font-weight: 600;
+      transition: all 0.3s;
+      box-shadow: 0 0 8px #00b89466;
+    }
+
+    .cta-btn:hover {
+      background: #00d1a7;
+      box-shadow: 0 0 18px #00d1a766;
+      transform: scale(1.05);
+    }
+
+    /* sessão sobre */
+    .sobre {
+      text-align: center;
+      padding: 80px 20px;
+      background: #111;
+    }
+
+    .sobre h2 {
+      color: #00b894;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .sobre p {
+      color: #ccc;
+      font-size: 1.1rem;
+      max-width: 750px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    /* sessão de serviços */
+    .servicos {
+      padding: 80px 20px;
+      background: #0e0e0e;
+      text-align: center;
+    }
+
+    .servicos h2 {
+      color: #00b894;
+      margin-bottom: 40px;
+      font-size: 1.8rem;
+    }
+
+    .servico-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .servico {
+      background: #151515;
+      border-radius: 12px;
+      padding: 30px 20px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      transition: 0.3s;
+    }
+
+    .servico:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 20px rgba(0,184,148,0.3);
+    }
+
+    .servico h3 {
+      color: #00b894;
+      margin-bottom: 10px;
+    }
+
+    .servico p {
+      color: #bbb;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #777;
+      background: #0b0b0b;
+      border-top: 1px solid #111;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2.3rem; }
+      .hero p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header class="site-header">
+    <div class="logo">Barb<span>Lab</span></div>
+    <nav>
+      <a href="/" class="active">Início</a>
+      <a href="/agendamento">Agendar</a>
+      <a href="/cadastro">Cadastro</a>
+      <a href="/admin-login" class="btn-admin">Painel Admin</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Seu estilo, nossa missão.</h1>
+      <p>Bem-vindo ao BarbLab — um espaço moderno, com profissionais de alto nível e tecnologia que facilita sua vida. Agende online e viva a melhor experiência de barbearia!</p>
+      <div class="cta-buttons">
+        <a href="/agendamento" class="cta-btn">Agendar Agora</a>
+        <a href="/cadastro" class="cta-btn">Criar Cadastro</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre -->
+  <section class="sobre">
+    <h2>Sobre o BarbLab</h2>
+    <p>O BarbLab une tradição e inovação. Nosso compromisso é entregar cortes precisos, barbeiros qualificados e um ambiente acolhedor. Aqui, o cuidado vai além do visual — é uma experiência personalizada do início ao fim.</p>
+  </section>
+
+  <!-- Serviços -->
+  <section class="servicos">
+    <h2>Serviços</h2>
+    <div class="servico-grid">
+      <div class="servico">
+        <h3>✂️ Corte de Cabelo</h3>
+        <p>Do clássico ao moderno, com acabamento impecável e atenção aos detalhes.</p>
+      </div>
+      <div class="servico">
+        <h3>🧔 Barba Completa</h3>
+        <p>Tratamento, alinhamento e hidratação — tudo para realçar seu estilo.</p>
+      </div>
+      <div class="servico">
+        <h3>💇‍♂️ Corte + Barba</h3>
+        <p>Pacote completo para sair com visual renovado e confiança lá em cima.</p>
+      </div>
+      <div class="servico">
+        <h3>👁️ Sobrancelha</h3>
+        <p>Acabamento preciso para um olhar marcante e bem definido.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    © 2025 BarbLab — Todos os direitos reservados.<br>
+    Desenvolvido com 💚 por catib.
+  </footer>
+</body>
+</html>
