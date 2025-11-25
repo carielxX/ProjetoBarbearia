@@ -86,7 +86,7 @@ class SMSLog(db.Model):
     client_id = db.Column(db.Integer)
     to_number = db.Column(db.String(80))
     message = db.Column(db.Text)
-    sent_at = db.Column(datetime, default=datetime.utcnow)
+    sent_at = db.Column(db.DateTime, default=datetime.utcnow)
     simulated = db.Column(db.Boolean, default=True)
 
 # -------------------------------------------------------------------------
